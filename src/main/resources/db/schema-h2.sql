@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE user
+(
+    id INT PRIMARY KEY NOT NULL,
+    name VARCHAR(30) NULL,
+    age INT NULL,
+    email VARCHAR(50) NULL
+);
