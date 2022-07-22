@@ -16,7 +16,7 @@ import java.util.Collections;
 class MpCodeGeneratorTest {
     @Test
     void generateCode() {
-         generate("com.example.mybatisplus", "potluck","potluck");
+         generate("com.example.mybatisplus", "","user");
     }
 
     private void generate(String parentPackage, String moduleName, String... tableNames) {
@@ -27,7 +27,6 @@ class MpCodeGeneratorTest {
                         "Test!6266")
                 .globalConfig(builder -> {
                     builder.author("Justin Liu") // 设置作者
-                            .enableSwagger() // 开启 swagger 模式
                             .fileOverride() // 覆盖已生成文件
                             .disableOpenDir() // 默认生成后会打开文件所在位置，不想打开可以设置为false，设计这个属性的初衷应该是怕用户找不到生成的文件
                             .outputDir("/home/justin/Sandbox/codegen/java"); // 指定输出目录

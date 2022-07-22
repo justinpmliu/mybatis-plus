@@ -1,6 +1,6 @@
 package com.example.mybatisplus.mapper;
 
-import com.example.mybatisplus.model.User;
+import com.example.mybatisplus.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

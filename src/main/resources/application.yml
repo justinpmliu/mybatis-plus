@@ -13,3 +13,8 @@ spring:
   h2:
     console:
       enabled: true
+
+mybatis-plus:
+  type-aliases-package: com.example.mybatisplus.entity
+  configuration:
+    jdbc-type-for-null: null
