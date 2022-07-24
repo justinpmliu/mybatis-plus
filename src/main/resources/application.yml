@@ -1,18 +1,27 @@
 # DataSource Config
 spring:
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:test;NON_KEYWORDS=USER
+    #H2
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:test;NON_KEYWORDS=USER
+#    username: root
+#    password: test
+
+    #MySql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
     username: root
-    password: test
+    password: Test!6266
+
   sql:
     init:
-      data-locations: classpath:db/data-h2.sql
-      schema-locations: classpath:db/schema-h2.sql
+      data-locations: classpath:db/data.sql
+#      schema-locations: classpath:db/schema-h2.sql
+      schema-locations: classpath:db/schema-mysql.sql
       mode: always
-  h2:
-    console:
-      enabled: true
+#  h2:
+#    console:
+#      enabled: true
 
 mybatis-plus:
   type-aliases-package: com.example.mybatisplus.entity
