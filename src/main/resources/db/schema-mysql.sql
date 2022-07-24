@@ -5,5 +5,6 @@ CREATE TABLE user
     id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(30),
     age INT,
-    email VARCHAR(50)
+    email VARCHAR(50),
+    deleted INT DEFAULT 0
 );

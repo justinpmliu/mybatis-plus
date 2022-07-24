@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -41,5 +42,18 @@ class UserMapperTest {
         List<User> userList = userMapper.selectList(null);
         assertEquals(6, userList.size());
         userList.forEach(System.out::println);
+    }
+
+    @Test
+    void testLogicalDelete() {
+        userMapper.deleteById(1L);
+        List<User> userList = userMapper.selectList(null);
+        assertEquals(4, userList.size());
+        userList.forEach(System.out::println);
+
+        LambdaQueryWrapper<User> queryWrapper = Wrappers.lambdaQuery();
+        queryWrapper.eq(User::getId, 1L);
+        List<User> users = userMapper.selectList(queryWrapper);
+        assertTrue(users.isEmpty());
     }
 }

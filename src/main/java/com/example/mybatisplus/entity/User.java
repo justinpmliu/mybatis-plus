@@ -1,9 +1,6 @@
 package com.example.mybatisplus.entity;
 
-import com.baomidou.mybatisplus.annotation.DbType;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.KeySequence;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -31,4 +28,7 @@ public class User implements Serializable {
     private Integer age;
 
     private String email;
+
+    @TableLogic
+    private Integer deleted;
 }
