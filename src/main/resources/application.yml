@@ -38,3 +38,5 @@ server:
       enabled: true
       directory: /home/justin/Sandbox/logs
       prefix: access_log_mybatisplus
+      max-days: 7
+      rename-on-rotate: true
